@@ -3,14 +3,14 @@ import { Request, Response } from 'express';
 
 export const getLessons = async (req: Request, res: Response) => {
   try {
-    const users = await db.query.usersTable.findMany({
+    const userData = await db.query.usersTable.findMany({
       with: {
         lessons: true,
       },
     });
-    return res.status(200).json({ data: users });
+    return res.status(200).json({ data: userData });
   } catch (error) {
-    return res.status(500).json({ message: 'Server Error' });
+    return res.status(500).json({ message: `Server Error ${error}` });
   }
 };
 

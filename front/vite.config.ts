@@ -14,11 +14,10 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:3000', // Your Node.js server URL
+        target: 'http://localhost:3000/',
         changeOrigin: true,
         secure: false,
-        // Optional: remove the /api prefix if your backend routes don't include it
-        rewrite: (path) => path.replace(/^\/api/, ''),
+        // rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
   },

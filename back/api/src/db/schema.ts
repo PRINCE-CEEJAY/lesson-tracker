@@ -29,3 +29,5 @@ export const relations = defineRelations({ usersTable, lessonsTable }, (r) => ({
     }),
   },
 }));
+
+export type LessonType = typeof lessonsTable;

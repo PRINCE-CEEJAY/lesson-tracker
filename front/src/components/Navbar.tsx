@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { buttonVariants } from './ui/button';
 import { useEffect, useState } from 'react';
 import { useDebouncedValue } from '@/hooks/useDebouncedValue';
+import { ModeToggle } from './theme-toggler';
 
 export default function Navbar() {
   const [searchInput, setSearchInput] = useState('');
@@ -56,11 +57,12 @@ export default function Navbar() {
 
       {/* PROFILE */}
       <section
-        className={`${buttonVariants({ variant: 'secondary' })} flex items-center space-x-2 cursor-pointer`}
+        className={`${buttonVariants({ variant: 'ghost' })} flex items-center space-x-2 cursor-pointer`}
         onClick={() => navigate('/profile')}
       >
         <User />
         <h1 className='font-bold space-x-3'>Prince Ceejay</h1>
+        <ModeToggle />
       </section>
     </div>
   );

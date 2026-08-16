@@ -5,12 +5,18 @@ import { Provider } from 'react-redux';
 import { store } from './app/store';
 import Navbar from './components/Navbar.tsx';
 import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from './components/ui/theme-provider.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <Provider store={store}>
     <BrowserRouter>
-      <Navbar />
-      <App />
+      <ThemeProvider
+        defaultTheme='dark'
+        storageKey='vite-ui-theme'
+      >
+        <Navbar />
+        <App />
+      </ThemeProvider>
     </BrowserRouter>
   </Provider>,
 );
